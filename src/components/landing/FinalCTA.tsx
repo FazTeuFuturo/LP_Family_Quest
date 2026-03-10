@@ -34,9 +34,14 @@ export const FinalCTA: React.FC = () => {
              </p>
           </div>
           
-          <button onClick={() => document.getElementById('pricing')?.scrollIntoView()} className="bg-gold text-[#0D0D0D] font-cinzel font-black text-xl md:text-2xl px-10 py-5 rounded-lg shadow-brutal animate-[glow-pulse_3s_infinite] hover:translate-x-1 hover:translate-y-1 transition-transform w-full md:w-auto">
+          <a 
+            href="https://tarefas-ebon.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-gold text-[#0D0D0D] font-cinzel font-black text-xl md:text-2xl px-10 py-5 rounded-lg shadow-brutal animate-[glow-pulse_3s_infinite] hover:translate-x-1 hover:translate-y-1 transition-transform w-full md:w-auto flex items-center justify-center text-center uppercase"
+          >
             ⚔️ Quero Transformar Minha Família
-          </button>
+          </a>
           
           <p className="mt-8 text-sm text-text-muted font-medium">
             Mais de 500 famílias já entraram na aventura. Restaurne a paz gamificada na sua casa.

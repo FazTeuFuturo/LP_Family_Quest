@@ -55,9 +55,14 @@ export const Pricing: React.FC = () => {
               </li>
             </ul>
 
-            <button className="w-full py-4 rounded-xl border border-white/20 text-white font-bold hover:bg-white/5 transition-colors">
+            <a 
+              href="https://tarefas-ebon.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-4 rounded-xl border border-white/20 text-white font-bold hover:bg-white/5 transition-colors flex items-center justify-center text-center uppercase"
+            >
               Começar Grátis
-            </button>
+            </a>
           </motion.div>
 
           {/* Plano Lendário */}
@@ -98,9 +103,14 @@ export const Pricing: React.FC = () => {
               </li>
             </ul>
 
-            <button className="w-full py-4 rounded-xl bg-gold text-[#0D0D0D] font-bold font-cinzel text-lg shadow-brutal-gold hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all">
+            <a 
+              href="https://tarefas-ebon.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-4 rounded-xl bg-gold text-[#0D0D0D] font-bold font-cinzel text-lg shadow-brutal-gold hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all flex items-center justify-center text-center uppercase"
+            >
               Tornar-se Lendário
-            </button>
+            </a>
           </motion.div>
         </div>
       </div>

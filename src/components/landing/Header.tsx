@@ -49,12 +49,14 @@ export const Header: React.FC = () => {
           ))}
           <div className="flex items-center gap-4">
             <span className="text-white/40 text-lg">⋮</span>
-            <button 
-              onClick={() => document.getElementById('pricing')?.scrollIntoView()}
-              className="bg-gold text-[#0D0D0D] px-6 py-2 rounded-md font-cinzel font-bold shadow-[0_0_15px_rgba(245,197,24,0.3)] hover:scale-105 transition-transform text-sm uppercase"
+            <a 
+              href="https://tarefas-ebon.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-gold text-[#0D0D0D] px-6 py-2 rounded-md font-cinzel font-bold shadow-[0_0_15px_rgba(245,197,24,0.3)] hover:scale-105 transition-transform text-sm uppercase flex items-center justify-center"
             >
               Entrar
-            </button>
+            </a>
           </div>
         </nav>
 

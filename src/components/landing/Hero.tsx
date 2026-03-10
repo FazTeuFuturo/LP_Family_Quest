@@ -79,12 +79,14 @@ export const Hero: React.FC = () => {
             transition={{ delay: 0.8 }}
             className="flex flex-col gap-8 w-full items-center lg:items-start"
           >
-            <button 
-              onClick={() => document.getElementById('pricing')?.scrollIntoView()}
-              className="w-full max-w-[340px] px-8 py-5 bg-hero-purple text-white font-black font-cinzel rounded-lg shadow-glow-purple hover:scale-[1.02] active:scale-[0.98] transition-all text-xl uppercase tracking-wider border-b-4 border-purple-900"
+            <a 
+              href="https://tarefas-ebon.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full max-w-[340px] px-8 py-5 bg-hero-purple text-white font-black font-cinzel rounded-lg shadow-glow-purple hover:scale-[1.02] active:scale-[0.98] transition-all text-xl uppercase tracking-wider border-b-4 border-purple-900 flex items-center justify-center text-center"
             >
               Comece sua Jornada Agora
-            </button>
+            </a>
             
             <div className="flex flex-col items-center lg:items-start w-full">
               <span className="text-white/60 text-[10px] font-bold font-cinzel mb-2 tracking-widest uppercase">Experiência da Família</span>
