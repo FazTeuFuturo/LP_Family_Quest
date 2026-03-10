@@ -38,7 +38,7 @@ export const Hero: React.FC = () => {
 
   return (
     <section 
-      className="relative min-h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-[#0D0D0D] pt-20 px-4"
+      className="relative h-[100dvh] flex flex-col justify-center items-center overflow-hidden bg-[#0D0D0D] pt-20 px-4"
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
@@ -95,8 +95,8 @@ export const Hero: React.FC = () => {
           </motion.div>
         </div>
 
-        {/* Right Side: Cylinder Carousel */}
-        <div className="order-1 lg:order-2">
+        {/* Right Side: Cylinder Carousel - Hidden on Mobile/Tablet */}
+        <div className="hidden lg:block order-1 lg:order-2">
           <CylinderCarousel 
             rotationValue={rotationValue} 
             isDragging={isDragging} 

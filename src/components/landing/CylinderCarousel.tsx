@@ -9,6 +9,7 @@ const CARDS = [
 
 const FACE_COUNT = CARDS.length;
 const FACE_WIDTH = 220;
+const FACE_HEIGHT = Math.round(FACE_WIDTH * 16 / 9); // 391px — proporção 9:16 exata
 const CYLINDER_WIDTH = FACE_WIDTH * FACE_COUNT;
 const RADIUS = CYLINDER_WIDTH / (2 * Math.PI);
 
@@ -25,7 +26,10 @@ export const CylinderCarousel = memo(({ rotationValue, isDragging, velocityRef }
     );
 
     return (
-        <div className="w-full h-[220px] md:h-[380px] flex items-center justify-center relative z-10 scale-[0.55] md:scale-100 transition-transform origin-center" style={{ perspective: '1200px' }}>
+        <div
+            className="w-full flex items-center justify-center relative z-10 scale-[0.6] md:scale-100 transition-transform origin-center"
+            style={{ perspective: '1200px', height: `min(${FACE_HEIGHT}px, calc(100dvh - 180px))` }}
+        >
             <motion.div
                 drag="x"
                 dragConstraints={{ left: 0, right: 0 }}
