@@ -1,6 +1,5 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { SpotlightCard } from './SpotlightCard';
 
 export const PainSection: React.FC = () => {
   const pains = [
