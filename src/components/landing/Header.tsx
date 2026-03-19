@@ -23,39 +23,42 @@ export const Header: React.FC = () => {
 
   return (
     <header 
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? 'bg-[#0D0D0D]/90 backdrop-blur-md py-3 border-b border-gold/20' : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? 'bg-[#0D0D0D]/80 backdrop-blur-xl py-3 border-b border-gold/10 hud-border' : 'bg-transparent py-6'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo Stylized like the Screenshot */}
         <div 
-          className="cursor-pointer font-cinzel-deco font-black text-xl md:text-2xl text-gold tracking-[2px]" 
+          className="cursor-pointer font-cinzel font-black text-xl md:text-2xl text-gold tracking-[3px] text-glow-gold uppercase" 
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         >
-          FAMILYQUEST
+          FAMILY<span className="text-white/80">QUEST</span>
         </div>
 
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden md:flex items-center gap-10">
           {navLinks.map((link) => (
             <a 
               key={link.name} 
               href={link.href} 
-              className="text-sm font-semibold text-text-muted hover:text-gold transition-colors font-cinzel tracking-wider"
+              className="text-[11px] font-bold text-white/40 hover:text-gold transition-all font-cinzel tracking-[0.2em] uppercase relative group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-[1px] bg-gold transition-all group-hover:w-full" />
             </a>
           ))}
-          <div className="flex items-center gap-4">
-            <span className="text-white/40 text-lg">⋮</span>
+          <div className="flex items-center gap-6 pl-6 border-l border-white/10">
             <a 
               href="https://tarefas-ebon.vercel.app/"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gold text-[#0D0D0D] px-6 py-2 rounded-md font-cinzel font-bold shadow-[0_0_15px_rgba(245,197,24,0.3)] hover:scale-105 transition-transform text-sm uppercase flex items-center justify-center"
+              className="relative px-8 py-2 overflow-hidden group"
             >
-              Entrar
+              <div className="absolute inset-0 bg-gold/10 border border-gold/30 rounded-sm skew-x-[-15deg] group-hover:bg-gold/20 transition-all" />
+              <span className="relative z-10 font-cinzel font-bold text-gold text-xs uppercase tracking-widest">
+                Login
+              </span>
             </a>
           </div>
         </nav>

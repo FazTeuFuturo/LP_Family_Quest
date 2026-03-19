@@ -21,7 +21,7 @@ export const Testimonials: React.FC = () => {
   ];
 
   return (
-    <section id="testimonials" className="py-24 px-4 bg-[#0D0D0D] relative z-20">
+    <section id="testimonials" className="py-24 px-4 bg-[#0D0D0D] relative z-20 border-t border-white/5">
       <div className="max-w-6xl mx-auto">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
@@ -30,10 +30,10 @@ export const Testimonials: React.FC = () => {
            transition={{ duration: 0.6 }}
            className="text-center mb-16"
         >
-          <h2 className="font-cinzel text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-cinzel text-3xl md:text-5xl font-bold text-white mb-4 text-glow-gold">
             Famílias que viraram Lendas
           </h2>
-          <div className="w-24 h-1 bg-gold mx-auto mt-6"></div>
+          <div className="w-24 h-[1px] bg-gold/30 mx-auto mt-6"></div>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -44,31 +44,31 @@ export const Testimonials: React.FC = () => {
                whileInView={{ opacity: 1, scale: 1 }}
                viewport={{ once: true }}
                transition={{ duration: 0.5, delay: index * 0.2 }}
-               className="bg-[#111827] rounded-2xl p-8 border border-white/5 relative group hover:border-purple-magic/50 transition-colors"
+               className="glass-card p-10 rounded-sm border border-white/5 relative group hover:border-gold/30 transition-all duration-500 hud-border"
              >
-               {/* Quote Element */}
-               <div className="text-4xl text-purple-magic/40 font-serif absolute top-6 left-6 select-none font-bold">
-                 "
-               </div>
-               
                <div className="flex flex-col items-center text-center mt-6">
-                 <div className="w-16 h-16 rounded-full bg-gradient-to-br from-gold to-yellow-500 text-[#0D0D0D] flex items-center justify-center font-cinzel font-bold text-xl mb-6 shadow-[0_0_15px_rgba(245,197,24,0.4)] ring-4 ring-[#111827]">
+                 <div className="w-20 h-20 bg-purple-magic/20 border border-purple-magic/40 text-purple-light flex items-center justify-center font-cinzel font-bold text-2xl mb-8 neon-glow-purple relative overflow-hidden">
+                   <div className="absolute inset-x-0 h-[10%] bg-white/10 animate-hud-scanline opacity-30" />
                    {t.initials}
                  </div>
                  
-                 <p className="text-gray-300 italic mb-6 relative z-10 leading-relaxed min-h-[120px]">
+                 <p className="text-white/70 italic mb-8 relative z-10 leading-relaxed min-h-[120px] font-sans text-lg">
                    "{t.text}"
                  </p>
                  
                  <div className="mt-auto">
-                   <p className="font-bold text-white font-cinzel">{t.author}</p>
-                   <div className="flex justify-center gap-1 mt-2">
+                   <p className="font-bold text-white font-cinzel tracking-wider">{t.author}</p>
+                   <div className="flex justify-center gap-1 mt-4">
                      {[1,2,3,4,5].map(star => (
-                       <span key={star} className="text-gold text-sm">★</span>
+                       <span key={star} className="text-gold text-lg motion-safe:animate-pulse" style={{ animationDelay: `${star * 0.1}s` }}>★</span>
                      ))}
                    </div>
                  </div>
                </div>
+
+               {/* Decorative HUD corners */}
+               <div className="absolute top-2 left-2 w-2 h-2 border-t border-l border-white/10" />
+               <div className="absolute bottom-2 right-2 w-2 h-2 border-b border-r border-white/10" />
              </motion.div>
           ))}
         </div>

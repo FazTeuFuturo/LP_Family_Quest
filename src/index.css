@@ -67,3 +67,57 @@
   75%  { transform: translateY(-40px) translateX(5px); }
   100% { transform: translateY(0px) translateX(0px); }
 }
+
+/* HUD & Glassmorphism Utilities (Style 19/39) */
+.glass-card {
+  background: rgba(13, 13, 13, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(123, 47, 190, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.8);
+}
+
+.hud-border {
+  position: relative;
+  border: 1px solid rgba(245, 197, 24, 0.3);
+}
+
+.hud-border::before,
+.hud-border::after {
+  content: '';
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: #F5C518;
+  border-style: solid;
+}
+
+.hud-border::before {
+  top: -1px;
+  left: -1px;
+  border-width: 2px 0 0 2px;
+}
+
+.hud-border::after {
+  bottom: -1px;
+  right: -1px;
+  border-width: 0 2px 2px 0;
+}
+
+.neon-glow-purple {
+  box-shadow: 0 0 15px rgba(123, 47, 190, 0.4),
+              inset 0 0 10px rgba(123, 47, 190, 0.2);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 10px rgba(245, 197, 24, 0.5);
+}
+
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+.animate-hud-scanline {
+  animation: scanline 8s linear infinite;
+}

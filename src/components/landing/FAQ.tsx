@@ -25,7 +25,7 @@ export const FAQ: React.FC = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   return (
-    <section id="faq" className="py-24 px-4 bg-[#111827] relative z-20 border-t border-b border-white/5">
+    <section id="faq" className="py-24 px-4 bg-[#0D0D0D] relative z-20 border-t border-b border-white/5">
       <div className="max-w-3xl mx-auto">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
@@ -34,10 +34,10 @@ export const FAQ: React.FC = () => {
            transition={{ duration: 0.6 }}
            className="text-center mb-16"
         >
-          <h2 className="font-cinzel text-3xl md:text-5xl font-bold text-white mb-4">
+          <h2 className="font-cinzel text-3xl md:text-5xl font-bold text-white mb-6 text-glow-gold">
             Dúvidas Frequentes
           </h2>
-          <div className="w-24 h-1 bg-purple-magic mx-auto mt-6"></div>
+          <div className="w-24 h-[1px] bg-purple-magic/40 mx-auto mt-6"></div>
         </motion.div>
 
         <div className="space-y-4">
@@ -48,14 +48,16 @@ export const FAQ: React.FC = () => {
                whileInView={{ opacity: 1, y: 0 }}
                viewport={{ once: true }}
                transition={{ duration: 0.3, delay: index * 0.1 }}
-               className="border border-white/10 rounded-xl overflow-hidden bg-[#0D0D0D]"
+               className={`rounded-sm overflow-hidden transition-all duration-500 hud-border ${
+                 openIndex === index ? 'glass-card border-gold/30' : 'bg-white/[0.02] border-white/5'
+               }`}
              >
                <button
                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                 className="w-full text-left px-6 py-5 flex items-center justify-between font-bold text-white hover:text-gold transition-colors focus:outline-none"
+                 className="w-full text-left px-8 py-6 flex items-center justify-between font-bold text-white hover:text-gold transition-colors focus:outline-none font-cinzel tracking-wide"
                >
-                 <span>{faq.q}</span>
-                 <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${openIndex === index ? "rotate-180 text-gold" : "text-gray-500"}`} />
+                 <span className={openIndex === index ? "text-glow-gold" : ""}>{faq.q}</span>
+                 <ChevronDown className={`w-5 h-5 transition-transform duration-500 ${openIndex === index ? "rotate-180 text-gold" : "text-white/20"}`} />
                </button>
                
                <AnimatePresence>
@@ -64,9 +66,9 @@ export const FAQ: React.FC = () => {
                      initial={{ height: 0, opacity: 0 }}
                      animate={{ height: "auto", opacity: 1 }}
                      exit={{ height: 0, opacity: 0 }}
-                     transition={{ duration: 0.3 }}
+                     transition={{ duration: 0.4, ease: "circOut" }}
                    >
-                     <div className="px-6 pb-6 text-text-muted leading-relaxed">
+                     <div className="px-8 pb-8 text-white/50 leading-relaxed font-sans text-lg border-t border-white/5 pt-4">
                        {faq.a}
                      </div>
                    </motion.div>

@@ -26,39 +26,57 @@ export const Features: React.FC = () => {
   ];
 
   return (
-    <section id="features" className="py-24 px-4 bg-[#111827] relative z-20 border-t border-b border-white/5">
+    <section id="features" className="py-24 px-4 bg-[#0D0D0D] relative z-20 border-t border-b border-white/5">
       <div className="max-w-6xl mx-auto">
         <motion.div
            initial={{ opacity: 0, y: 30 }}
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: true }}
            transition={{ duration: 0.6 }}
-           className="text-center mb-16"
+           className="text-center mb-16 relative"
         >
-          <h2 className="font-cinzel text-3xl md:text-5xl font-bold text-white mb-4">
+          <div className="absolute -top-10 left-1/2 -translate-x-1/2 w-40 h-40 bg-purple-magic/10 blur-3xl -z-10" />
+          <h2 className="font-cinzel text-3xl md:text-5xl font-bold text-white mb-4 text-glow-gold">
             Por que o Family Quest é diferente
           </h2>
-          <div className="w-24 h-1 bg-purple-magic mx-auto mt-6"></div>
+          <div className="w-24 h-[2px] bg-gradient-to-r from-transparent via-gold to-transparent mx-auto mt-6 shadow-[0_0_10px_rgba(245,197,24,0.5)]"></div>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {featus.map((feat, i) => (
             <motion.div
               key={i}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.3 }}
-              className="bg-[#0D0D0D] p-8 rounded-2xl border-2 border-transparent hover:border-gold hover:shadow-[0_0_30px_rgba(245,197,24,0.15)] transition-all flex gap-6 items-start group relative overflow-hidden"
+              transition={{ duration: 0.4, delay: i * 0.1 }}
+              className={`glass-card p-8 rounded-sm hover:border-gold/50 transition-all group relative overflow-hidden flex flex-col justify-between hud-border ${
+                i === 0 || i === 3 ? 'md:col-span-2' : 'md:col-span-1'
+              }`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-              <div className="text-4xl p-4 bg-[#111827] rounded-xl border border-white/10 group-hover:border-gold/30 transition-colors shadow-inner relative z-10">
-                {feat.icon}
+              <div className="absolute inset-x-0 top-0 h-[1px] bg-gradient-to-r from-transparent via-gold/20 to-transparent" />
+              
+              <div className="relative z-10 flex flex-col h-full">
+                <div className="text-4xl mb-6 w-16 h-16 flex items-center justify-center bg-purple-magic/10 rounded-lg border border-purple-magic/20 group-hover:neon-glow-purple transition-all duration-500">
+                  {feat.icon}
+                </div>
+                
+                <div>
+                  <h3 className="text-xl md:text-2xl font-bold font-cinzel text-white mb-3 group-hover:text-gold transition-colors tracking-wide">
+                    {feat.title}
+                  </h3>
+                  <p className="text-white/60 leading-relaxed font-sans text-sm md:text-base">
+                    {feat.desc}
+                  </p>
+                </div>
               </div>
-              <div className="relative z-10">
-                <h3 className="text-xl font-bold font-cinzel text-white mb-2 group-hover:text-gold transition-colors">{feat.title}</h3>
-                <p className="text-text-muted leading-relaxed">{feat.desc}</p>
+
+              {/* HUD Decorative Elements */}
+              <div className="absolute bottom-2 right-2 opacity-20 group-hover:opacity-100 transition-opacity">
+                <div className="text-[10px] font-cinzel text-gold tracking-widest uppercase">
+                  System.Log_{i + 1}
+                </div>
               </div>
             </motion.div>
           ))}

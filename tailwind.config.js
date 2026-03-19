@@ -23,6 +23,8 @@ export default {
         'float': 'float 6s ease-in-out infinite',
         'glow-pulse': 'glow-pulse 2s ease-in-out infinite',
         'coin-spin': 'coin-spin 3s linear infinite',
+        'shimmer': 'shimmer 2s linear infinite',
+        'hud-scanline': 'scanline 8s linear infinite',
       },
       keyframes: {
         float: {
@@ -36,6 +38,14 @@ export default {
         'coin-spin': {
           '0%': { transform: 'rotateY(0deg)' },
           '100%': { transform: 'rotateY(360deg)' },
+        },
+        shimmer: {
+          '0%': { transform: 'translateX(-100%)' },
+          '100%': { transform: 'translateX(100%)' },
+        },
+        scanline: {
+          '0%': { transform: 'translateY(-100%)' },
+          '100%': { transform: 'translateY(100%)' },
         },
       },
     },
